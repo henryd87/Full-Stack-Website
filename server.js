@@ -3,7 +3,9 @@ const app = express()
 const path = require('path'); //Path allows us to work with directories and fill paths
 const PORT = process.env.PORT || 3500;
 
-app.use('/',express.static(path.join(__dirname, '/public'))) //access to css
+app.use(express.json())//allows to process data json, receive and parse json
+app.use('/',express.static(path.join(__dirname, '/public'))) //access to css also is middleware
+//Middleware allows for fitering HTTp requests, authentication, etc.
 app.use('/',require('./routes/root')) //joins server to the root page or index page
 app.all("*",(req,res)=>{
     res.status(404);
