@@ -1,0 +1,4 @@
+20230301	19:10:49	25ae37fc-714d-47ff-b24e-6ce023e2bae8	Error: Not allowed by CORS	GET
+    	/	https://www.google.com
+20230301	19:10:49	315ecc63-a553-4f11-9199-858e6ed7b5f9	Error: Not allowed by CORS	OPTIONS
+    	/	https://www.google.com
