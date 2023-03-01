@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express()
 const {logger} = require('./middleware/logger')
+const errorHandler = require('./middleware/errorHandler')
 const path = require('path'); //Path allows us to work with directories and fill paths
 const PORT = process.env.PORT || 3500;
+//cookies are text files with small pieces of data
+//that cna store passwords/usernames and makes web dev easier
 
 app.use(logger)
 app.use(express.json())//allows to process data json, receive and parse json
@@ -19,6 +22,8 @@ app.all("*",(req,res)=>{
         res.type('txt').send("404 not found")
     } //This basically says for anything else coming through, it sends a 404 status.
 })
+
+app.use(errorHandler)
 
 //app.listen takes in arguments of port, hostname, backlog, and callback
 //This .listen below takes in port and callback,
