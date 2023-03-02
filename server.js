@@ -1,8 +1,12 @@
+require('dotenv').config()
 const express = require('express');
 const app = express()
 const {logger} = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const corsOptions = require('./config/corsOptions')
+const connectDB = require('./config/dbConn')
+const mongoose = require('mongoose')
+const {logEvents} = require('./middleware/logger')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const path = require('path'); //Path allows us to work with directories and fill paths
@@ -10,6 +14,8 @@ const PORT = process.env.PORT || 3500;
 //cookies are text files with small pieces of data
 //that cna store passwords/usernames and makes web dev easier
 
+connectDB();
+console.log(process.env.NODE_ENV)
 app.use(logger)
 app.use(cors(corsOptions)) //without cors, we don't allow any other websites to fetch our website.
 //with cors, any website can fetch our website unless we make a whitelist
@@ -31,10 +37,16 @@ app.all("*",(req,res)=>{
 
 app.use(errorHandler)
 
-//app.listen takes in arguments of port, hostname, backlog, and callback
-//This .listen below takes in port and callback,
-//callback specifies a function to be executed
-app.listen(PORT, ()=>{
-    console.log(`Server running on port ${PORT}`);
+mongoose.connection.once('open',()=>{
+    console.log('connected to mongoDB')
+    app.listen(PORT, ()=>{
+        console.log(`Server running on port ${PORT}`);
+    })
 })
-//Server is up and running
+
+mongoose.connection.on('error',err=>{
+    console.log(err);
+    logEvents(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`, 'mongoErrLog.log')
+})
+//we basically receive error number, code, system call and the error host name
+//created new file called mongoErrLog.log
