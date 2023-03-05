@@ -33,3 +33,7 @@
 20230303	22:21:20	386f4412-1438-427c-84ab-2f0aa178e26f	PATCH	/users	undefined
 20230303	22:23:12	c8eff804-29bc-4f65-aee7-29b1497ee7d8	DELETE	/users	undefined
 20230303	22:23:44	9faf2e28-bbc2-4f62-9507-3386e3248996	GET	/users	undefined
+20230305	16:45:53	a493bd73-010a-4f38-a8fc-5911c8432a03	GET	/	undefined
+20230305	16:45:53	b6958b15-ad8a-48fa-a678-c83b792b0705	GET	/css/styles.css	undefined
+20230305	17:56:32	bbde3d25-1776-4875-9c50-b5736dbcbfcf	GET	/	undefined
+20230305	17:56:32	759c0f3c-17e3-4340-833f-233a647b8bd8	GET	/css/styles.css	undefined
