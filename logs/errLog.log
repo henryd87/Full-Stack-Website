@@ -2,3 +2,17 @@
     	/	https://www.google.com
 20230301	19:10:49	315ecc63-a553-4f11-9199-858e6ed7b5f9	Error: Not allowed by CORS	OPTIONS
     	/	https://www.google.com
+20230303	22:16:17	cfb9ea71-d993-4b10-a170-e5109f21a3fa	CastError: Cast to ObjectId failed for value "64027165fb48a7cf79199db" (type string) at path "_id" for model "User"	PATCH
+    	/users	undefined
+20230303	22:16:45	2fafe27d-e6aa-4680-af95-b8ec1559c0c2	CastError: Cast to ObjectId failed for value "64027165fb48a7cf79199db" (type string) at path "_id" for model "User"	PATCH
+    	/users	undefined
+20230303	22:17:00	c72fbb7a-eaf7-4c90-b108-229ea6b10b08	CastError: Cast to ObjectId failed for value "64027165fb48a7cf79199db" (type string) at path "_id" for model "User"	PATCH
+    	/users	undefined
+20230303	22:17:26	51cd29e3-eaa2-4bc8-9617-0449500c11cb	CastError: Cast to ObjectId failed for value "64027165fb48a7cf79199db" (type string) at path "_id" for model "User"	PATCH
+    	/users	undefined
+20230303	22:17:52	524b50d3-1314-4699-814c-ca221f48b75f	CastError: Cast to ObjectId failed for value "64027165fb48a7cf79199db" (type string) at path "_id" for model "User"	PATCH
+    	/users	undefined
+20230303	22:17:59	052f0720-a262-4d6f-b301-172b8d289069	TypeError: Cannot read properties of undefined (reading 'toString')	PATCH
+    	/users	undefined
+20230303	22:21:20	27308698-d6e8-43f8-8d25-6ef0289a3565	TypeError: Cannot read properties of undefined (reading 'toString')	PATCH
+    	/users	undefined
